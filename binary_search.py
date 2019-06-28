@@ -1,4 +1,5 @@
 def binary_search_recursion(target,low,high,data):
+    data.sort()
     if low > high: #만약에 시작지점이 끝지점보다 크면
         return False ##True return
     mid = (low+high)//2 #mid 값을 지정해준다.
