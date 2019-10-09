@@ -8,14 +8,16 @@ def getParent(p,x):
 def unionParent(p,a,b):
     a = getParent(p,a)
     b = getParent(p,b)
+    #더작은 부모노드로 넣는다.
     if a < b:
         p[b] = a
     else:
         p[a] = b
-#두 원소가 같은 집합에 포함되어 있는지를 확인한다.
+#같은 부모노드인지 체크
 def findParent(p,a,b):
     a = getParent(p,a)
     b = getParent(p,b)
+    #부모노드가 같으면 1을 return 아니면 0을 리턴
     if a == b:
         return 1
     return 0
