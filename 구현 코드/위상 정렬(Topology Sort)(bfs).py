@@ -1,7 +1,6 @@
 inDegree = [0 for i in range(10)]
 a = [[] for i in range(10)]
 def topologySort():
-    ret = [0 for i in range(10)]
     q = []
     #진입차수가 0인 노드를 큐에 삽입합니다.
     for i in range(1,n+1):
@@ -9,8 +8,11 @@ def topologySort():
     # 정렬이 완전히 수행되려면 정확히 n개의 노드를 방문합니다.
     while q:
         p = q.pop(0)
-    for i in range(1,n+1):
-        print(ret[i])
+        print(p,end=' ')
+        for i in a[p]:
+            inDegree[i] -= 1
+            if inDegree[i] == 0:
+                q.append(i)
 n = 7
 a[1].append(2)
 inDegree[2] += 1
