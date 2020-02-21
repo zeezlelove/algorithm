@@ -7,20 +7,10 @@ def topologySort():
     for i in range(1,n+1):
         if inDegree[i] == 0:q.append(i)
     # 정렬이 완전히 수행되려면 정확히 n개의 노드를 방문합니다.
-    for i in range(1,n+1):
-        # n개를 방문하기 전에 큐가 비어버리면 사이클발생
-        if len(q) == 0:
-            print("사이클 발생")
-            return
+    while q:
         p = q.pop(0)
-        ret[i] = p
-        for i in a[p]:
-            # 새롭게 진입차수가 0이 된 정점을 큐에 삽입합니다.
-            inDegree[i] -= 1
-            if inDegree[i] == 0:
-                q.append(i)
     for i in range(1,n+1):
-        print(ret[i],end=' ')
+        print(ret[i])
 n = 7
 a[1].append(2)
 inDegree[2] += 1
