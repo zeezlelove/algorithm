@@ -73,3 +73,4 @@ for i in range(int(input())):
             lca = ac[a][i]
     print(lca)
 # 출처: https://www.crocus.co.kr/660 [Crocus]
+# icpc.me/11437
