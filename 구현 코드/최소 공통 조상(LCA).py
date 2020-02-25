@@ -45,7 +45,6 @@ depth[0] = -1
 
 #루트노드인 1번노드부터 트리형성
 getTree(1,0)
-print(ac)
 
 for i in range(int(input())):
     a,b = map(int,input().split())
