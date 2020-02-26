@@ -52,7 +52,7 @@ for i in range(int(input())):
         # depth[b] >= depth[a]가 되도록한다.
         if depth[a] > depth[b]:
             a,b = b,a
-
+        # "b = ac[b][i]" 부분에서 서로의 조상을 타고타고 들어가서 홀수도 가능한것이다.
         for i in range(max_level,-1,-1):
             # b의 2^i번째 조상이 a의 depth보다 크거나 같으면 계속 조상을 타고간다.
             if depth[a] <= depth[ac[b][i]]:
@@ -63,11 +63,12 @@ for i in range(int(input())):
     # 즉, 서로 다른 노드(2,3)의 조상이 1로 같다면 lca = ac[2][0]에 의해 2의 조상이 1임을 알 수 있고
     # 마찬가지로 ac[3][0] 또한 3의 조상이 1임을 알게되며 알고리즘이 끝이난다.
     if a != b:
-        for i in range(max_level,-1,-1):
-            if ac[a][i] != ac[b][i]:
+        for i in range(max_level,-1,-1): # 2^k번째 조상을 최대로 갈수있는 숫자부터 0까지 반복한다.
+            #각각의 조상이 같으면 최소 공통 조상을 찾은것이므로 아닌것을 판단한다.
+            if ac[a][i] != ac[b][i]: #각각의 조상이 다르면 각각의 조상을 a,b에 저장한다.
                 a = ac[a][i]
                 b = ac[b][i]
-            lca = ac[a][i]
+            lca = ac[a][i] #a의 조상을 계속 저장한다.
     print(lca)
 # 출처: https://www.crocus.co.kr/660 [Crocus]
 # icpc.me/11437
