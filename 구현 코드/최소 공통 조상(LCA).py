@@ -47,18 +47,16 @@ getTree(1,0)
 
 for i in range(int(input())):
     a,b = map(int,input().split())
-    #깊이를 같게해주는 코드
+    # 깊이를 같게해주는 코드
     if depth[a] != depth[b]: #깊이가 같지않으면
-        #depth[b] >= depth[a]가 되도록한다.
+        # depth[b] >= depth[a]가 되도록한다.
         if depth[a] > depth[b]:
             a,b = b,a
-        # ac에 각각의 2^i의 조상이있기때문에 서로의 조상을 타고타고 들어가서 홀수도 가능한것이다.
 
         for i in range(max_level,-1,-1):
-            #b의 2^i번째 조상이 a의 depth보다 크거나 같으면 계속 조상을 타고간다.
+            # b의 2^i번째 조상이 a의 depth보다 크거나 같으면 계속 조상을 타고간다.
             if depth[a] <= depth[ac[b][i]]:
                 b = ac[b][i]
-
     lca = a
     #  a와 b가 다르다면 현재 깊이가 같으니
     # 깊이를 계속 올려 서로 다른 노드의 조상이 같아질 때까지 반복한다.
