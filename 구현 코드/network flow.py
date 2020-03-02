@@ -1,9 +1,10 @@
 def maxFlow(s,e):
     global ret
-    while 1:
-        d = [-1 for i in range(n+1)]
+    while 1: #반복적으로 모든경우를 탐색할수있돋록 해준다.
+        d = [-1 for i in range(n+1)] #방문 체크
         q = []
-        q.append(s)
+        q.append(s) # 시작점을 넣어준다.
+        #일반적인 bfs를 실행한다, 인접한노드를 전부 본다.
         while q:
             x = q.pop(0)
             for y in arr[x]:
@@ -13,15 +14,15 @@ def maxFlow(s,e):
                     d[y] = x # 경로를 기억합니다.
                     if y == e:break # 도착지에 도달한경우
         if d[e] == -1:break # 모든경우를 찾은뒤에 탈출한다.
-        fl = inf
+        fl = inf # 가능한경로에서 최솟값을 찾아줘야하기 때문에 jnf로 둔다.
         i = e
         while i != s: # 거꾸로 최소 유량 탐색
-            fl = min(fl,c[d[i]][i]-f[d[i]][i])
+            fl = min(fl,c[d[i]][i]-f[d[i]][i]) # 해당간선의 남은유량만큼 확인해서 가장최솟값을 넣어준다.
             i = d[i]
         i = e
         while i != s:
-            f[d[i]][i] += fl
-            f[i][d[i]] -= fl
+            f[d[i]][i] += fl #양의 유량
+            f[i][d[i]] -= fl #음의 유량
             i = d[i]
         ret += fl
 n = int(input())
