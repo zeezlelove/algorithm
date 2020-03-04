@@ -11,4 +11,3 @@ k = int(input())
 li = [0 for i in range(k)]
 arr = list(map(int,input().split()))
 func(0,0)
-print()
