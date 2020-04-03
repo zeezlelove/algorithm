@@ -24,4 +24,5 @@ for i in range(m+k):
         arr[a] = b
         update(a,dif)
     else:
+        # 구간합 sum(arr[i]~arr[j])는 sum(arr[1]~arr[j])에서 arr[1]~arr[i-1]을 뺀 값과 같다
         print(Sum(b)-Sum(a-1))
