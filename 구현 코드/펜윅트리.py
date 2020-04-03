@@ -1,4 +1,4 @@
-def sum(i):
+def Sum(i):
     ans = 0
     while i > 0:
         ans += tree[i]
@@ -7,11 +7,11 @@ def sum(i):
 
 def update(i,dif):
     while i < len(tree):
-        tree[i] += dif
-        i += (i & -i)
+        tree[i] += dif # 차이를 더한다
+        i += (i & -i) # Sum함수와 다르게 최하위 비트를 더해서 업데이트해준다.
 
 n,m,k = map(int,input().split())
-tree = [0 for i in range(n+1)]
+tree = [0 for i in range(n+1)] # 홀수인덱스는 입력받은 배열의 값과 같다.
 arr = [0 for i in range(n+1)]
 for i in range(1,n+1):
     arr[i] = int(input())
@@ -24,4 +24,4 @@ for i in range(m+k):
         arr[a] = b
         update(a,dif)
     else:
-        print(sum(b)-sum(a-1))
+        print(Sum(b)-Sum(a-1))
