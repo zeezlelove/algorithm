@@ -1,5 +1,5 @@
 #1786 찾기
-def Gp(p):
+def Gp(p): 
     m = len(p)
     pi = [0 for i in range(m)]
     j = 0
