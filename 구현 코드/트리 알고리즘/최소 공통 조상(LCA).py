@@ -3,7 +3,6 @@ import sys
 sys.setrecursionlimit(5000000)
 ip = sys.stdin.readline
 n = int(ip())
-pii = []
 max_level = floor(log2(n))
 
 # dp(ac)배열 만드는 과정
