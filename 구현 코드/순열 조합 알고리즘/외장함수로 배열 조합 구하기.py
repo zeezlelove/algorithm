@@ -4,3 +4,4 @@ arr = list(map(int,input().split()))
 li = combinations(arr,n)
 for i in li:
     print(i)
+#정렬된 순서,반복없음
