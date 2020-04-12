@@ -19,11 +19,11 @@ def dfs(nd):
 
     p = d[nd]
     for i in arr[nd]:
-        if d[i] == 0:
+        if d[i] == 0: #방문 안했을경우
             p = min(p,dfs(i))
-        elif not f[i]:
+        elif not f[i]: #방문을 했지만 scc가 확정이 안된경우
             p = min(p,d[i])
-    if p == d[nd]:
+    if p == d[nd]: #현재노드의 cnt값과 현재 가장작은 cnt값이 같은경우(scc를 다돈경우)
         sc = []
         while 1:
             t = st.pop()
@@ -39,8 +39,7 @@ for i in range(1,V+1):
     if d[i] == 0:
         dfs(i)
 scc.sort()
-print(d)
-# print(SccTotal)
-# for i in scc:
-#     print(*i,end=' ')
-#     print(-1)
+print(SccTotal)
+for i in scc:
+    print(*i,end=' ')
+    print(-1)
