@@ -30,7 +30,7 @@ n = int(input())
 tree = {}
 for i in range(n):
     data = input().split()
-    tree[data[0]] = Node(data[0],data[1],data[2]) #왼쪽 노드 오른쪽 노드
+    tree[data[0]] = Node(data[0],data[1],data[2]) # 현재노드 왼쪽 노드 오른쪽 노드
 preorder(tree['1'])
 print()
 inorder(tree['1'])
