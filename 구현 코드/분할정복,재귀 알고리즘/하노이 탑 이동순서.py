@@ -4,10 +4,11 @@ def hanoi(num,A,B,C): #A에 꽃혀있는 num개의 원반을 B를 거쳐 C로 �
         return
         print("원반 {}을 {}에서 {}로 이동".format(num,A,C))
     else:
-        #1.num-1개를 A에서 B로 이동
+        #마지막 한개를 제외하고 A기둥에서 C기둥를 거쳐 B기둥으로 옮긴다.
         hanoi(num-1,A,C,B)
-        #2.1개를 A에서 B로 이동
+        #원반 num을 A 기둥에서 C기둥으로 이동
         print("원반 {}을 {}에서 {}로 이동".format(num,A,C))
-        #3.num-1개를 B에서 C로 이동
+        #나머지를 B기둥에서 A기둥을 거쳐 C기둥으로 옮긴다.
         hanoi(num-1,B,A,C)
 hanoi(int(input()),1,2,3) #원반개수,A기둥번호,B기둥번호,C기둥번호
+#정확한 설명이 아닐수있음
