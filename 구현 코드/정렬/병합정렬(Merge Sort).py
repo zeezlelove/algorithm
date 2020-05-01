@@ -15,7 +15,7 @@ def merge(s,mid,e): #병합함수
         ans[k] = arr[j]
         k += 1
         j += 1
-    while i <= mid: #만약에 오른쪽 블럭이 남아있으면 남아있는 수를 ans에 넣는다.
+    while i <= mid: #만약에 오른쪽 블럭이 남아있으면 남아있는수를 ans에 넣는다.
         ans[k] = arr[i]
         k += 1
         i += 1
