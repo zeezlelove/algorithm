@@ -1,6 +1,6 @@
 n=int(input())
 a = [False,False] + [True]*(n-1)
-primes=[]
+primes = []
 
 for i in range(2,n+1):
   if a[i]:
