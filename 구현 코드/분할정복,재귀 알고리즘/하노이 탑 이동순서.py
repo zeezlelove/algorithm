@@ -10,4 +10,3 @@ def hanoi(num,A,B,C): #A에 꽃혀있는 num개의 원반을 B를 거쳐 C로 �
         #나머지를 B기둥에서 A기둥을 거쳐 C기둥으로 옮긴다.
         hanoi(num-1,B,A,C)
 hanoi(int(input()),1,2,3) #원반개수,A기둥번호,B기둥번호,C기둥번호
-#정확한 설명이 아닐수있음
