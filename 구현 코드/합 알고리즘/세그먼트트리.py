@@ -47,5 +47,3 @@ for i in range(m+k):
         update(1,0,n-1,b-1,dif)
     else:
         print(Sum(0,n-1,1,b-1,c-1))
-#참고:https://www.acmicpc.net/blog/view/9
-#백준 문제
