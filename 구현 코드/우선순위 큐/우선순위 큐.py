@@ -10,4 +10,4 @@ for i in range(int(ip())):
             print(0)
     else:
         heapq.heappush(heap,-n)
-#백준 최대힙
+# 백준 최대힙
