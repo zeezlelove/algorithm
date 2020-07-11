@@ -4,6 +4,7 @@ arr = [[1,2,3,4],
        [9,10,11,12],
        [13,14,15,16],
        [17,18,19,20]]
+       
 for i in range(n):
     for j in range(m):
         print(arr[j][i])
