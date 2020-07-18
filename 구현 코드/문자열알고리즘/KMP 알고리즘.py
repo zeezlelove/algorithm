@@ -11,6 +11,7 @@ def Gp(p):
             pi[i] += j
     return pi
 
+
 def kmp(s,p):
     ans = []
     pi = Gp(p)
