@@ -6,7 +6,7 @@ def lower_bound(val):
         mid = (s+e)//2
         if arr[mid] < val: #mid값이 찾으려는 값보다 작으면
             s = mid+1
-        else: #mid값이 찾으려는 값보다 크면
+        else: #mid값이 찾으려는 값보다 크거나 같으면
             ans = min(ans,arr[mid]) #갱신
             e = mid-1
     return ans
