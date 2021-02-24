@@ -28,15 +28,12 @@ def Sum(s,e,nd,l,r):
     return Sum(s,m,nd*2,l,r)+Sum(m+1,e,nd*2+1,l,r)
 #1.[start,end]에 index가 포함되는 경우
 #2.[start,end]에 index가 포함되지 않는 경우
-def update(n,s,e,t,dif):
-    if s <= t and t <= e: #1번의 경우 tree의 현재노드에 +dif만큼해준다.
-        tree[n] += dif
-    else: #2번의 경우 return
-        return
-    if s != e: #노드가 리프노드가 아니면 재귀를 돈다.
-        m = (s+e)//2
-        update(n*2,s,m,t,dif)
-        update(n*2+1,m+1,e,t,dif)
+def update(nd,s,e,ix,diff):
+    if ix < s or e < ix:return 0 #2번의 경우
+    tree[nd] = tree[nd]+diff
+    if s != e: # 리프노드가 
+        update(nd*2,s,(s+e)//2,ix,diff)
+        update(nd*2+1,(s+e)//2+1,e,ix,diff)
 
 init(0,n-1,1)
 for i in range(m+k):
