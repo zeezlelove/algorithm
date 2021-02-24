@@ -20,9 +20,9 @@ def init(s,e,nd):
 #4.[left,right]와 [start,end]가 겹쳐져 있는 경우 (1, 2, 3 제외한 나머지 경우)
 def Sum(s,e,nd,l,r):
     #리스트 밖에 구하고자하는 범위가 있는경우
-    if l > e or r < s:return 0 #l > e경우 l,r뒤에 있는경우,r < s경우 l,r앞에 있는경우이다 겹치지 않으므로 0을 리턴한다.
+    if l > e or r < s:return 0 #1번
     #범위 안에 있는경우
-    if l <= s and e <= r:return tree[nd]#구해야하는 합의 범위는 l,r인데,s,e는 그 범위에 모두 포함되기 때문에 s,e의 합인 tree[idx]를 리턴한다.
+    if l <= s and e <= r:return tree[nd] #2
     #그맇지 않다면 두 부분으로 나누어 합을 구하기
     m = (s+e)//2
     return Sum(s,m,nd*2,l,r)+Sum(m+1,e,nd*2+1,l,r)
