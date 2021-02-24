@@ -22,7 +22,7 @@ def Sum(s,e,nd,l,r):
     #리스트 밖에 구하고자하는 범위가 있는경우
     if l > e or r < s:return 0 #1번
     #범위 안에 있는경우
-    if l <= s and e <= r:return tree[nd] #2
+    if l <= s and e <= r:return tree[nd] #2번
     #그맇지 않다면 두 부분으로 나누어 합을 구하기
     m = (s+e)//2
     return Sum(s,m,nd*2,l,r)+Sum(m+1,e,nd*2+1,l,r)
