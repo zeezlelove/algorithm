@@ -20,7 +20,7 @@ def init(s,e,nd):
 #4.[left,right]와 [start,end]가 겹쳐져 있는 경우 (1, 2, 3 제외한 나머지 경우)
 def Sum(s,e,nd,l,r):
     #리스트 밖에 구하고자하는 범위가 있는경우
-    if l > e or r < s:return 0 #1번
+    if e < l or r < s:return 0 #1번
     #범위 안에 있는경우
     if l <= s and e <= r:return tree[nd] #2번
     #그맇지 않다면 두 부분으로 나누어 합을 구하기
